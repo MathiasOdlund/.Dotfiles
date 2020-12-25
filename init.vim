@@ -2,6 +2,9 @@ syntax on
 filetype plugin indent on
 
 set exrc
+set encoding=UTF-8
+filetype indent on
+filetype plugin on
 set guicursor=
 set relativenumber
 set nohlsearch
@@ -24,11 +27,26 @@ set scrolloff=8
 set noshowmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
-
+let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
-"Nerd Tree, for directories
-Plug 'preservim/nerdtree'
+"Snippets
+Plug 'epilande/vim-es2015-snippets'
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+" Ultisnips
+Plug 'SirVer/ultisnips'
+
+
+"Better commenter
+Plug 'preservim/nerdcommenter'
+
+"Git Plugins
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+
+"Formating the code with prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " FZF - The notorious fuzzy finder;)- 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -41,6 +59,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Gruvbox install
 Plug 'morhetz/gruvbox'
 
+"Nerd Tree, for directories and icons on the tree
+Plug 'preservim/nerdtree'    
+Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 call plug#end()
 
@@ -79,11 +100,20 @@ endif
 "Toggling the nerdtree, with ctrl n
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" use <tab> for trigger completion and navigate to the next complete item
+" use <tab> for trigger completion and navigate to the next complete item coc
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
+"Coc config
+let g:coc_global_extensions = [
+            \ 'coc-snippets',
+            \ 'coc-pairs',
+            \ 'coc-tsserver',
+            \ 'coc-eslint',
+            \ 'coc-prettier',
+            \ 'coc-json',
+            \ ]
 
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
@@ -98,4 +128,25 @@ nnoremap <leader>l :wincmd l<CR>
 
 "Aut source init.vim
 autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $NVIMRC"
+
+"Saving on ctr + s 
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>
+
+"nvim keybinds for the git plugins
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gu :diffget //3<CR>
+nmap <leader>gs :G<CR>
+
+"Remapping esc to ii to get into insert mode
+imap ii <Esc>
+
+"Formatitng on save with prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"Formating code on leadre F
+nmap <leader>f  <Plug>(coc-format-selected)
+
+"NerdCommenter, better comments 
+let g:NERDSpaceDelims = 1 
+let g:NERDCompactSexyComs = 1
 
