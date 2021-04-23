@@ -56,9 +56,9 @@ Plug 'junegunn/fzf.vim'
 " Auto-suggestions
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Gruvbox install
+" Theme install
 Plug 'morhetz/gruvbox'
-
+Plug 'dracula/vim', { 'as': 'dracula' }
 "Nerd Tree, for directories and icons on the tree
 Plug 'preservim/nerdtree'    
 Plug 'ryanoasis/vim-devicons'
@@ -66,7 +66,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "Initializing the color theme
-colorscheme gruvbox
+colorscheme dracula
 set background=dark
 
 "FzF binds and settings
@@ -150,3 +150,5 @@ nmap <leader>f  <Plug>(coc-format-selected)
 let g:NERDSpaceDelims = 1 
 let g:NERDCompactSexyComs = 1
 
+"Mapping the capslock key to esc
+"setxkbmap -option caps:swapescape
