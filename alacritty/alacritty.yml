@@ -11,7 +11,7 @@ window:
 decorations: full
 startup_mode: Fullscreen
 title: Azzpr
-background_opacity: 0.9
+background_opacity: 1
 
 #Keybinds
 key_bindings:
@@ -22,11 +22,11 @@ key_bindings:
 #Default:
 #     - Windows: working_directory: C:\Users\mathi\Dev
 #     - Linux: working_directory: ~/Dev/
-working_directory: C:\Users\mathi\Dev
+working_directory: /home/azzpr/Dev
 
 # Shell
-shell:
-  program: powershell
+#shell:
+    #  program: powershell
 #  args:
 #    - --login
 
