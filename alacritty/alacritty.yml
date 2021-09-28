@@ -2,16 +2,25 @@
 title: Azzpr - Alacritty
 #Window configuration
 window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 140
-    lines: 38
-    padding:
-        x: 10
-        y: 10
+    columns: 0
+    lines: 0
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is not scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 10
+    y: 10
 decorations: full
 startup_mode: Fullscreen
 title: Azzpr
-background_opacity: 1
+background_opacity: 0.6
 
 #Keybinds
 key_bindings:
@@ -22,7 +31,7 @@ key_bindings:
 #Default:
 #     - Windows: working_directory: C:\Users\mathi\Dev
 #     - Linux: working_directory: ~/Dev/
-working_directory: C:\Users\mathi\Dev
+#working_directory: ~/Dev
 
 # Shell
 #shell:
@@ -36,14 +45,14 @@ dynamic_title: true
 #Colors Nord
 colors:
   primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
+    background: '#0D0D17'
+    foreground: '#E6E6E6'
     dim_foreground: '#a5abb6'
   cursor:
-    text: '#2e3440'
+    text: '#C2213C'
     cursor: '#d8dee9'
   vi_mode_cursor:
-    text: '#2e3440'
+    text: '#C2213C'
     cursor: '#d8dee9'
   selection:
     text: CellForeground
@@ -58,7 +67,7 @@ colors:
   normal:
     black: '#3b4252'
     red: '#bf616a'
-    green: '#a3be8c'
+    green: '#E8A738'
     yellow: '#ebcb8b'
     blue: '#81a1c1'
     magenta: '#b48ead'
