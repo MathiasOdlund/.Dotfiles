@@ -20,7 +20,7 @@ window:
 decorations: full
 startup_mode: Fullscreen
 title: Azzpr
-background_opacity: 0.6
+background_opacity: 0.9
 
 #Keybinds
 key_bindings:
@@ -34,8 +34,8 @@ key_bindings:
 #working_directory: ~/Dev
 
 # Shell
-#shell:
-    #  program: powershell
+shell:
+        program: zsh
 #  args:
 #    - --login
 
@@ -45,14 +45,14 @@ dynamic_title: true
 #Colors Nord
 colors:
   primary:
-    background: '#0D0D17'
-    foreground: '#E6E6E6'
+    background: '#151515'
+    foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
-    text: '#C2213C'
+    text: '#2e3440'
     cursor: '#d8dee9'
   vi_mode_cursor:
-    text: '#C2213C'
+    text: '#2e3440'
     cursor: '#d8dee9'
   selection:
     text: CellForeground
@@ -67,7 +67,7 @@ colors:
   normal:
     black: '#3b4252'
     red: '#bf616a'
-    green: '#E8A738'
+    green: '#a3be8c'
     yellow: '#ebcb8b'
     blue: '#81a1c1'
     magenta: '#b48ead'
@@ -91,3 +91,4 @@ colors:
     magenta: '#8c738c'
     cyan: '#6d96a5'
     white: '#aeb3bb'
+
