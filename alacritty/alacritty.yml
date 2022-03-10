@@ -42,6 +42,7 @@ window:
   #  y: 0
 
   # Window padding (changes require restart)
+  # i
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
@@ -67,7 +68,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.7
+  opacity: 0.9
 
   # Startup Mode (changes require restart)
   #
@@ -110,17 +111,17 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   #bold:
@@ -156,7 +157,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 9.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -172,7 +173,7 @@ font:
   #  x: 0
   #  y: 0
 
-  # Thin stroke font rendering (macOS only)
+  # Tin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
@@ -182,7 +183,59 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
+  primary:
+    background: '#1c1e26'
+    foreground: '#f8f8f2'
+    bright_foreground: '#ffffff'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '#44475a'
+      background: '#50fa7b'
+    focused_match:
+      foreground: '#44475a'
+      background: '#ffb86c'
+    bar:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+  hints:
+    start:
+      foreground: '#282a36'
+      background: '#f1fa8c'
+    end:
+      foreground: '#f1fa8c'
+      background: '#282a36'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '#44475a'
+  normal:
+    black: '#21222c'
+    red: '#ff5555'
+    green: '#50fa7b'
+    yellow: '#f1fa8c'
+    blue: '#bd93f9'
+    magenta: '#ff79c6'
+    cyan: '#8be9fd'
+    white: '#f8f8f2'
+  bright:
+    black: '#6272a4'
+    red: '#ff6e6e'
+    green: '#69ff94'
+    yellow: '#ffffa5'
+    blue: '#d6acff'
+    magenta: '#ff92df'
+    cyan: '#a4ffff'
+    white: '#ffffff'
+  #colors:
   # Default colors
   #primary:
   #  background: '#1d1f21'
@@ -868,4 +921,5 @@ font:
 
   # Print all received window events.
   #print_events: false
+
 
